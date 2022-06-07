@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "main.h"
 
 
 /**
@@ -24,4 +25,3 @@ _putchar(letter);
 
 _putchar('\n');
 }
-
