@@ -1,7 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "main.h"
-
 
 /**
  *
@@ -20,8 +18,8 @@ char letter;
 for (letter = 'a'; letter <= 'z'; letter++)
 
 {
-_putchar(letter);
+putchar(letter);
 }
 
-_putchar('\n');
+putchar('\n');
 }
