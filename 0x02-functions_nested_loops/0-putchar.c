@@ -1,25 +1,20 @@
-#include <stdio.h>
+#include "_putchar"
 
-
-
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
-
 {
-int i;
+char *sh = "_putchar";
 
-putchar ('X');
-
-putchar (' ');
-for (i=1; i<=10; i++)
-
+while (*sh)
 {
-
-putchar (!)
+_putchar(*sh);
+sh++;
 }
-
-putchar ('\n');
-
-return 0;
-
+_putchar('\n');
+return (0);
 }
 
