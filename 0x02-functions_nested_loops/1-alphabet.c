@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-
+#include <main.m>
 /**
  *
  * print_alphabet - prints the english alphabet from a-z.
@@ -22,4 +22,7 @@ putchar(letter);
 }
 
 putchar('\n');
+
+return (0)
 }
+
