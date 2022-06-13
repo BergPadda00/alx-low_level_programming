@@ -6,16 +6,16 @@
  * @s: String to count
  *
  * int _strlen(char *s)
- * Return String (c)
+ * Return String (s)
  *
  *
  */
 int _strlen(char *s)
 {
-int c = 0;
+int s = 0;
 for (; *s != '\0'; s++)
 {
 c++;
 }
-return (c);
+return (s);
 }
