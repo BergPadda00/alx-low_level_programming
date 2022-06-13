@@ -3,19 +3,18 @@
 
 /**
  * _strlen - Returns the length of a string
- * @s: String to count
+ * @s:char
  *
- * int _strlen(char *s)
- * Return Always 0
- *
- *
+ *Return:int
  */
+
 int _strlen(char *s)
 {
-int len;
-for (len = 0; *s != '0\'; len++)
+int i;
+for (i = 0; s[i] != '\0'; i++)
 {
-s++;
+continue;
 }
-return (len);
+return (i);
 }
+
