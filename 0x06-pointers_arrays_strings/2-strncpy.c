@@ -7,8 +7,7 @@
  * @src: The source value
  * @n: The copy limit
  *
- * Return: char value
- *
+ * Return: Char
  */
 char *_strncpy(char *dest, char *src, int n)
 {
