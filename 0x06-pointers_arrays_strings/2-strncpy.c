@@ -1,31 +1,23 @@
 #include "main.h"
-#include <stadio>
+#include <stdio.h>
 
 /**
- *
- * _strncpy - Copy a string
- * @dest: The destination value
- * @src: The source value
- * @n: The copy limit
- *
- * Return: dest
+ * _strncpy - check the code for Holberton School students.
+ * @dest: is a pointer type char
+ * @src: is a pointer type char
+ * @n: is a int variable
+ * Return: Always 0.
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-int a = 0, b = 0;
-while (src[b])
-{
-b++;
-}
-while (a < n && src[a])
-{
-dest[a] = src[a];
-a++;
-}
-while (a < n)
-{
-dest[a] = '\0';
-a++;
-}
+
+int i;
+
+for (i = 0; i < n && src[i] != '\0'; i++)
+dest[i] = src[i];
+
+for ( ; i < n; i++)
+dest[i] = '\0';
+
 return (dest);
 }
