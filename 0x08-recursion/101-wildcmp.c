@@ -24,7 +24,7 @@ x = s1;
 
 		
 
-	return (wildcmp(char *s1, char *s2));
+	return (wildcmp (char s1, char s2));
 
 }
-			
+
