@@ -12,18 +12,9 @@
 
 int wildcmp(char *s1, char *s2)
 {
-
-int x;
-	int y;
-
-x = *s1;
-	y = *s2;
-
-	if (x == 1) 
-		if  (y == 0)
-
-		
-
-	return (0);
+if (*s1 != *s2)
+{		
+	return (1);
 }
-
+return (0);
+}
