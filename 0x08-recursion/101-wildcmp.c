@@ -12,7 +12,11 @@
 
 int wildcmp(char *s1, char *s2)
 {
-	int s1 = 1,*s2 = 2;
+	int x ,c
+		x = *s1
+		c = *s2
+
+		
 
 	return (int wildcmp(char *s1, char *s2)
 			}
