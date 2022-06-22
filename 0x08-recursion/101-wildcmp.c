@@ -10,9 +10,9 @@
  *
  */
 
-int wildcmp(char *s1, char *s2)
+int wildcmp(char s1, char s2)
 {
-	int x ,c
+	int x, c
 		x = *s1
 		c = *s2
 
