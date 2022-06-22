@@ -12,15 +12,19 @@
 
 int wildcmp(char s1, char s2)
 {
+
 int x;
 	int y;
 
-	if (x = 1) 
-		if  (y = 0)
+x = s1
+	y = s2
+
+	if (x == 1) 
+		if  (y == 0)
 
 		
 
-	return (int wildcmp(char *s1, char *s2));
+	return (wildcmp(char *s1, char *s2));
 
 }
 			
