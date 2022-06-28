@@ -2,19 +2,18 @@
 #include <stdlib.h>
 
 /**
- * free_grid - function that frees a 2 dimensional grid of int pointers
- * @grid: int double pointer to be freed
- * @height: int for height of 2D array to be passed
- * Return: void
+ * free_grid -  Entry point
+ *@grid: pointer
+ *@height: int
+ * Return: Always 0.
  */
-
 void free_grid(int **grid, int height)
 {
+	int i;
 
-	int k;
-
-	for (k = 0; k < height; k++)
-		free(grid[k]);
-
+	for (i = 0 ; i < height ; i++)
+	{
+		free(grid[i]);
+	}
 	free(grid);
 }
