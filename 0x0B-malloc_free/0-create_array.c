@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
 
 /**
@@ -8,12 +7,19 @@
  * @b: size to allocate
  * Return: void
  */
-void *malloc_checked(unsigned int b)
+char *create_array(unsigned int size, char c)
 {
-	void *p;
+	char *p;
+	unsigned int i;
 
-	p = malloc(b);
-	if (p == NULL)
-		exit(98);
+	p = malloc(sizeof(c) * size);
+	if (size == 0 || p == NULL)
+	{
+		return (NULL);
+	}
+	for (i = 0; i < size; i++)
+	{
+		*(p + i) = c;
+	}
 	return (p);
 }
