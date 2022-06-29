@@ -1,4 +1,4 @@
 git add .
-git commit More malloc, free
+git commit -m More_malloc_free
 git push
 
