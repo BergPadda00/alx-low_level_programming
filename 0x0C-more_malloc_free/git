@@ -1,4 +1,4 @@
 git add .
-git commit -m 0x0C C - More malloc, free
+git commit More malloc, free
 git push
 
