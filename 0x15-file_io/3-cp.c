@@ -1,45 +1,81 @@
-#include "mainn.h"
-#include <unistd.h>
-#include <stdio.h>
+#include "main.h"
 
 /**
- * err_msg - function that prints an error message
- * @msg: Char pointer containing error message to print
- * @file: Char pointer for string to print name of object with error
- * @status: Int for exit status code to use
- * Return: Void
+ * cp - copies src to desinations
+ * @file_to: the destination file
+ * @file_from: the source file
+ *
+ * Return: integer
  */
-
-void err_msg(char *msg, char *file, int status)
+int cp(char *file_to, char *file_from)
 {
-	dprintf(STDERR_FILENO, "%s%s\n", msg, file);
-	exit(status);
+	char *buffer[1024];
+	int td, fd, fr, fw;
+	int fc, ftc;
+
+	fd = open(file_from, O_RDONLY);
+	if (fd < 0)
+		return (98);
+
+	td = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (td < 0)
+		return (99);
+
+	fr = read(fd, buffer, 1024);
+	if (fr < 0)
+		return (98);
+
+	while (fr > 0)
+	{
+		fw = write(td, buffer, fr);
+		if (fw < 0)
+			return (99);
+		fr = read(fd, buffer, 1024);
+		if (fr < 0)
+			return (98);
+	}
+
+	fc = close(fd);
+	if (fc < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fc);
+		return (100);
+	}
+	ftc = close(td);
+	if (ftc < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ftc);
+		return (100);
+	}
+	return (0);
 }
 
 /**
- * main - program that copies the content of a file to another file
- * @argc: - Int of arguments passed into program including command
- * @argv: - Array of pointers to the strings of arguments passed
- * Return: 0
+ * main - the main function
+ * @ac: the argument count
+ * @av: the argument vector
+ *
+ * Return: always 0
  */
-
-int main(int argc, char *argv[])
+int main(int ac, char **av)
 {
-	char buf[1024];
-	int fd, fd2, FD_VALUE;
-	ssize_t n_read, n_write;
+	int c;
 
-	if (argc != 3)
-		err_msg("Usage: cp file_from file_to", "", 97);
+	if (ac != 3)
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 
-	fd = open(argv[1], O_RDONLY);
-
-	if (fd < 0)
-		err_msg("Error: Can't read from file ", argv[1], 98);
-
-	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-
-	if (fd2 < 0)
-		err_msg("Error: Can't write to ", argv[2], 99);
-
-
+	c = cp(av[2], av[1]);
+	switch (c)
+	{
+		case (98):
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+			exit(98);
+		case (99):
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+			exit(99);
+		case (100):
+			exit(100);
+		default:
+			return (0);
+	}
+}
