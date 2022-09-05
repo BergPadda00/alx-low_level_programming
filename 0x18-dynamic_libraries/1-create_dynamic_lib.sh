@@ -1,13 +1,3 @@
-#include "main.h"
-#include <stdio.h>
-
-/**
- * main - check the code for Holberton School students.
- *
- * Return: Always EXIT_SUCCESS.
- */
-int main(void)
-{
-    printf("%d\n", _strlen("Holberton"));
-    return (EXIT_SUCCESS);
-}
+#!/bin/bash
+gcc -c -Wall -Werror -fPIC *.c
+gcc -shared -o liball.so *.o
